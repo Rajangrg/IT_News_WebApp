@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { getStoryIds } from "./services/hackerNewsAPI";
+import React from "react";
+//containers
+import {StoriesContainer} from './containers/StoriesContainer'
 
 export const App = () => {
-  const [storyIds, setStoryIds] = useState([]);
-  
-  useEffect(() => {
-    const fetchStoryIds = async () => {
-      setStoryIds(await getStoryIds());
-    };
-  fetchStoryIds();
-  }, [setStoryIds]);
-
   return (
     <div>
-      <h1>{console.log(storyIds)}</h1>
+      <h1><StoriesContainer></StoriesContainer></h1>
     </div>
   );
 };
