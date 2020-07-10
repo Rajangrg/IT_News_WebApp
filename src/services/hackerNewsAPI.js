@@ -1,4 +1,5 @@
 import axios from "axios";
+import { selectStoryFields } from "../utilis/selectFields";
 
 //url
 export const baseUrl = " https://hacker-news.firebaseio.com/v0/";
@@ -20,9 +21,10 @@ export const getStoryIds = async () => {
 export const getStory = async (storyId) => {
   const response = await axios
     .get(storyUrl + `${storyId}.json`) //json is url extension
-    .then(({ data }) => data)
+    .then(({ data }) => selectStoryFields(data))
     .catch((err) => {
       console.error(err);
     });
+
   return response;
 };

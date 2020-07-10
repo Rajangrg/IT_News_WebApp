@@ -7,16 +7,19 @@ export const Story = ({ storyId }) => {
   useEffect(() => {
     getStory(storyId)
       .then((data) => {
-        data && data.url && setStory(data); //validation
+        data && data.url && setStory(data); 
       })
       .catch((err) => {
         console.error(err);
       });
   }, [storyId]);
 
+
+  console.log(story)
   return (
     <div>
       {story && story.url ? (
+          //validation
         <>
           <a href={story.url}>
             <p>{story.title}</p>
