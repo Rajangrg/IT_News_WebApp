@@ -3,7 +3,7 @@ import { getStoryIds } from "../services/HackerNewsAPI";
 
 export const StoriesContainer = () => {
     const [storyIds, setStoryIds] = useState([]);
-  
+
     useEffect(() => {
       getStoryIds()
         .then((data) => {
