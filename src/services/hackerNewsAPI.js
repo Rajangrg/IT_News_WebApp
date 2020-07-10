@@ -1,5 +1,5 @@
 import axios from "axios";
-import { selectStoryFields } from "../utilis/selectFields";
+import { selectStoryFields } from "../selectors/selectFields";
 
 //url
 export const baseUrl = " https://hacker-news.firebaseio.com/v0/";

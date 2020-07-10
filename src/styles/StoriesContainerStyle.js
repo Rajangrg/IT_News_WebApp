@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #202020;
     background-color: #fafafe;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 8px;
   }
   ul {
     margin: 0;
