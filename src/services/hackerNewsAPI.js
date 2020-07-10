@@ -21,7 +21,7 @@ export const getStoryIds = async () => {
 export const getStory = async (storyId) => {
   const response = await axios
     .get(storyUrl + `${storyId}.json`) //json is url extension
-    .then(({ data }) => selectStoryFields(data))
+    .then(({ data }) => data && selectStoryFields(data))
     .catch((err) => {
       console.error(err);
     });

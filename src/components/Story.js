@@ -1,32 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { getStory } from "../services/HackerNewsAPI";
 
+//style
+import {
+  StoryWrapper,
+  StoryTitle,
+  StoryMeta,
+  StoryMetaElement,
+} from "../styles/StoryStyles";
+
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
 
   useEffect(() => {
     getStory(storyId)
       .then((data) => {
-        data && data.url && setStory(data); 
+        data && data.url && setStory(data);
       })
       .catch((err) => {
         console.error(err);
       });
   }, [storyId]);
+  //console.log(story)
 
-
-  console.log(story)
   return (
     <div>
-      {story && story.url ? (
-          //validation
-        <>
-          <a href={story.url}>
-            <p>{story.title}</p>
-          </a>
-          By: <p>{story.by}</p>
-          Posted:<p>{story.time}</p>
-        </>
+      {story && story.url ? ( //validation
+        <StoryWrapper data-testid="story">
+          <StoryTitle>
+            <a href={story.url}>{story.title}</a>
+          </StoryTitle>
+          <StoryMeta>
+            <span data-testid="story-by">
+              <StoryMetaElement color="#DE5D3A">By: </StoryMetaElement>
+              {story.by}
+            </span>
+            <span data-testid="story-time">
+              <StoryMetaElement color="#DE5D3A">Posted: </StoryMetaElement>
+              {story.time}
+            </span>
+          </StoryMeta>
+        </StoryWrapper>
       ) : null}
     </div>
   );
