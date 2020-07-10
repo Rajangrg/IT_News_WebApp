@@ -1,3 +1,9 @@
+# Install Instruction
+
+First Step: Clone or download the project. 
+Open your terminal and redirect to the folder (project) dictory.
+Second Step: npm install //note: you need node.js
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
